@@ -1,32 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [gradientAngle, setGradientAngle] = useState(45);
-
-  const handleMouseMove = (e) => {
-    const navbarRect = e.currentTarget.getBoundingClientRect();
-    const mouseXPercentage =
-      ((e.clientX - navbarRect.left) / navbarRect.width) * 100;
-    setGradientAngle(360 * (mouseXPercentage / 100));
-  };
-
   return (
-    <nav
-      className="navbar navbar-dark navbar-custom navbar-expand-lg"
-      onMouseMove={handleMouseMove}
-      style={{
-        backgroundImage: `linear-gradient(${gradientAngle}deg, #6a11cb 0%, #2575fc 100%)`,
-      }}
-    >
+    <nav className="navbar navbar-dark navbar-expand-lg navbar-transparent">
       <Link to="/" className="navbar-brand">
         FiTrack
       </Link>
       <div className="collpase navbar-collapse">
         <ul className="navbar-nav mr-auto">
           <li className="navbar-item">
-            <Link to="/" className="nav-link">
+            <Link to="/exercise" className="nav-link">
               Exercises
             </Link>
           </li>

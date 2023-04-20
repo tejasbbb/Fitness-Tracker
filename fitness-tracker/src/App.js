@@ -6,6 +6,7 @@ import EditExercise from "./components/edit-exercise.components";
 import CreateExercise from "./components/create-exercise.component";
 import "./App.css";
 import WeightLineGraph from "./components/chartComponent";
+import HomePage from "./components/homepageComponent";
 
 function App() {
   return (
@@ -14,10 +15,11 @@ function App() {
         <Navbar />
         <br />
         <Routes>
-          <Route path="/" element={<ExercisesList />} />
+          <Route path="/exercise" element={<ExercisesList />} />
           <Route path="/edit/:id" element={<EditExercise />} />
           <Route path="/create" element={<CreateExercise />} />
           <Route path="/Data" element={<WeightLineGraph />} />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </Router>
     </div>

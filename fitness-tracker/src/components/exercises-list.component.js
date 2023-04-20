@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./ExerciseList.css";
 
 const Exercise = (props) => {
   const navigate = useNavigate();
@@ -12,27 +13,13 @@ const Exercise = (props) => {
       <td>{props.exercise.weight}</td>
       <td>
         <button
-          style={{
-            backgroundColor: "white",
-            color: "gray",
-            border: "1px solid gray",
-            padding: "5px 10px",
-            borderRadius: "0",
-            margin: "2px",
-          }}
+          className="button button-delete"
           onClick={() => props.deleteExercise(props.exercise._id)}
         >
           Delete Exercise
         </button>
         <button
-          style={{
-            backgroundColor: "gray",
-            color: "white",
-            border: "1px solid gray",
-            padding: "5px 10px",
-            borderRadius: "0",
-            margin: "2px",
-          }}
+          className="button button-edit"
           onClick={() => navigate("/edit/" + props.exercise._id)}
         >
           Edit Exercise

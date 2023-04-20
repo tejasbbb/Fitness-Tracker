@@ -1,0 +1,37 @@
+.homepage {
+  background: url("https://images.unsplash.com/photo-1595051081722-41bde465ea7f")
+    no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.homepage-content {
+  position: relative;
+}
+
+.display-3 {
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.lead {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.oura-button {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.oura-button:hover {
+  background-color: #f8f8f8;
+  color: #000000;
+  text-decoration: none;
+}
