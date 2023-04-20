@@ -36,8 +36,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/user" className="nav-link">
-              Create User
+            <Link to="/Data" className="nav-link">
+              Data
             </Link>
           </li>
         </ul>

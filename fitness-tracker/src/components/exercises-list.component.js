@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import WeightLineGraph from "./chartComponent";
 
 const Exercise = (props) => {
   const navigate = useNavigate();
@@ -13,13 +12,27 @@ const Exercise = (props) => {
       <td>{props.exercise.weight}</td>
       <td>
         <button
-          className="btn btn-primary"
+          style={{
+            backgroundColor: "white",
+            color: "gray",
+            border: "1px solid gray",
+            padding: "5px 10px",
+            borderRadius: "0",
+            margin: "2px",
+          }}
           onClick={() => props.deleteExercise(props.exercise._id)}
         >
           Delete Exercise
         </button>
         <button
-          className="btn btn-danger"
+          style={{
+            backgroundColor: "gray",
+            color: "white",
+            border: "1px solid gray",
+            padding: "5px 10px",
+            borderRadius: "0",
+            margin: "2px",
+          }}
           onClick={() => navigate("/edit/" + props.exercise._id)}
         >
           Edit Exercise
@@ -76,9 +89,6 @@ const ExercisesList = () => {
         </thead>
         <tbody>{createExercise()}</tbody>
       </table>
-      {/* <div>
-        <WeightLineGraph />
-      </div> */}
     </div>
   );
 };

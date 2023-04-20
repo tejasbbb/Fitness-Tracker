@@ -5,6 +5,7 @@ import ExercisesList from "./components/exercises-list.component";
 import EditExercise from "./components/edit-exercise.components";
 import CreateExercise from "./components/create-exercise.component";
 import "./App.css";
+import WeightLineGraph from "./components/chartComponent";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<ExercisesList />} />
           <Route path="/edit/:id" element={<EditExercise />} />
           <Route path="/create" element={<CreateExercise />} />
+          <Route path="/Data" element={<WeightLineGraph />} />
         </Routes>
       </Router>
     </div>

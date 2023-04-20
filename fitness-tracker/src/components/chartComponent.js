@@ -1,41 +1,72 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
+import Chart from "chart.js/auto";
 
-const WeightLineGraph = () => {
-  const [weights, setWeights] = useState([]);
+const LineGraph = () => {
+  const [dataState, setDataState] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/exercises/")
-      .then((response) => {
-        const weightData = response.data.map((exercise) => ({
-          weight: exercise.weight,
-          date: exercise.date.substring(0, 10),
-        }));
-        setWeights(weightData);
-      })
-      .catch((err) => console.log(err));
+    axios.get("http://localhost:3000/exercises/").then((response) => {
+      console.log(response.data);
+      setDataState(response.data);
+    });
   }, []);
 
-  const data = {
-    labels: weights.map((item) => item.date),
+  const chartData = {
+    labels: dataState.map((exercise) => exercise.date.substring(0, 10)),
     datasets: [
       {
-        label: "Weight",
-        data: weights.map((item) => item.weight),
+        label: "exercise",
+        data: dataState.map((exercise) => exercise.weight),
         fill: false,
-        backgroundColor: "rgb(75, 192, 192)",
-        borderColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "#fff",
+        borderWidth: 3,
+        tension: 0.1,
       },
     ],
   };
 
-  const options = {
+  const chartOptions = {
+    plugins: {
+      title: {
+        display: true,
+        text: "exercise",
+        font: {
+          size: 24,
+          family: "Arial, sans-serif",
+        },
+        padding: {
+          top: 10,
+          bottom: 30,
+        },
+      },
+    },
     scales: {
-      y: {
+      x: {
+        title: {
+          display: true,
+          text: "Date",
+        },
         ticks: {
+          color: "#fff",
+        },
+        grid: {
+          color: "#fff",
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: "Weight(.lbs)",
+        },
+        ticks: {
+          color: "#fff",
           beginAtZero: true,
+          stepSize: 10,
+        },
+        grid: {
+          color: "#fff",
         },
       },
     },
@@ -43,10 +74,9 @@ const WeightLineGraph = () => {
 
   return (
     <div>
-      <h2>Weight Line Graph</h2>
-      <Line data={data} options={options} />
+      <Line data={chartData} options={chartOptions} />
     </div>
   );
 };
 
-export default WeightLineGraph;
+export default LineGraph;
