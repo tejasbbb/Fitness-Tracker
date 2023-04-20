@@ -44,7 +44,7 @@ const CreateExercise = () => {
       .post("http://localhost:3000/exercises/add", exercise)
       .then((data) => console.log(data));
 
-    navigate("/");
+    navigate("/exercise");
   };
   return (
     <div>
