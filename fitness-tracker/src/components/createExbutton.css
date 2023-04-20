@@ -1,0 +1,15 @@
+.custom-btn {
+  background: linear-gradient(to right, #b98dd4, #6f5ca5);
+  background-size: 200%;
+  background-position: left;
+  transition: background-position 0.5s ease-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+}
+
+.custom-btn:hover,
+.custom-btn:active {
+  background-position: right;
+}
