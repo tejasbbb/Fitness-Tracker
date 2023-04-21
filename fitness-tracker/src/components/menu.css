@@ -1,0 +1,32 @@
+.menu-item {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #eb720f;
+}
+
+.menu-item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.menu-item:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}

@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./exinput.css";
 
 const CreateExercise = () => {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ const CreateExercise = () => {
     navigate("/exercise");
   };
   return (
-    <div>
+    <div className="create-exercise-container">
       <h3>Create a New Exercise</h3>
       <form onSubmit={onSubmit}>
         <div className="form-control">

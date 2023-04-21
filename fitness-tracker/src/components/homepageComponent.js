@@ -19,6 +19,9 @@ const HomePage = () => {
                 </Link>
               </div>
             </div>
+            <div className="logo-container">
+              <div className="logo"></div>
+            </div>
           </div>
         </div>
       </div>
